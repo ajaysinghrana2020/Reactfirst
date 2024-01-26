@@ -1,6 +1,7 @@
 import reactImage from './assets/react-core-concepts.png';
 import componetImg from './assets/components.png';
 const reactDescription = ['Fundamental', 'Crucial', 'Core'];
+import {CORE_CONCEPTS} from './data.js';
 
 function genRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
@@ -16,12 +17,13 @@ function Header() {
   </header>);
 }
 
-function CoreConcepts(props) {
+function CoreConcepts({image,description,title}) {
   return (
     <li>
-      <img src={props.image} alt={props.descruption} />
-      <h3>{props.title}</h3>
-      <p>{props.descruption}</p>
+      <img src={image} 
+      alt={description} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
 
   );
@@ -35,14 +37,18 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcepts title="Componets" descruption=" The core UI building Block."
-            image={componetImg}  />
-            <CoreConcepts title="aj" descruption=" The core UI building Block."
-            image={componetImg}  />
-            <CoreConcepts title="pompoom" descruption=" The core UI building Block."
-            image={componetImg}  />
-            <CoreConcepts title="jaja" descruption=" The core UI building Block."
-            image={componetImg}  />
+            <CoreConcepts {...CORE_CONCEPTS[0]}  
+            />
+            <CoreConcepts {...CORE_CONCEPTS[1]}
+            />
+            <CoreConcepts {...CORE_CONCEPTS[2]}
+            />
+            <CoreConcepts {...CORE_CONCEPTS[3]}
+            />
+            
+            
+           
+            
           </ul>
 
         </section>
